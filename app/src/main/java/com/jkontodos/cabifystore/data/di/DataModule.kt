@@ -16,6 +16,7 @@ import dagger.hilt.components.SingletonComponent
 @Module
 @InstallIn(SingletonComponent::class)
 object DataModule {
+    /** * Responsible for internal calls to shared preferences. */
     @Provides
     fun provideSharedPreferences(@ApplicationContext context: Context): SharedPreferences =
         context.getSharedPreferences("cabify_store_pref", Context.MODE_PRIVATE)
@@ -25,9 +26,11 @@ object DataModule {
 @InstallIn(SingletonComponent::class)
 abstract class BindsDataModule {
 
+    /** * Module responsible for internal calls from the app using shared preferences. */
     @Binds
     abstract fun bindsLocalDataSource(sharedPreferencesDataSource: SharedPreferencesDataSource): LocalDataSource
 
+    /** * Module responsible for external calls from the app using Retrofit. */
     @Binds
     abstract fun bindRemoteDataSource(storeDataSource: StoreDataSource): RemoteDataSource
 }

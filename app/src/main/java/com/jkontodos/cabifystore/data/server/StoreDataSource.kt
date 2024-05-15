@@ -10,6 +10,13 @@ import javax.inject.Inject
 class StoreDataSource @Inject constructor(
     private val storeService: StoreService
 ) : RemoteDataSource {
+
+    /**
+     * Returns an iterator with the list of available products or a service error by calling the getProducts() function from StoreService.
+     * Based on the response, it will return either the service's data model or an error from the sealed class Failure.
+     *
+     * @return Either<Failure, ProductListResponse> an iterator with the available product list response or a service error.
+     */
     override suspend fun getProductList(): Either<Failure, ProductListResponse> =
         try {
             val palcalde = "6c19259bd32dd6aafa327fa557859c2f"

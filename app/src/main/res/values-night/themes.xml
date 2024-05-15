@@ -2,6 +2,8 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.CabifyStore" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your dark theme here. -->
-        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+        <item name="colorPrimary">@color/M800</item>
+        <item name="android:background">@color/M600</item>
+        <item name="android:textColor">@color/N0</item>
     </style>
 </resources>

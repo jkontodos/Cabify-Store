@@ -13,6 +13,11 @@ class StoreRepository @Inject constructor(
     private val remoteDataSource: RemoteDataSource,
     private val localDataSource: LocalDataSource
 ) {
+    /**
+     * Function to request the product list.
+     *
+     * @return Either<Failure, List<Product>> an iterator with the list of available products or a service error.
+     */
     suspend fun getProducts(): Either<Failure, List<Product>> =
         remoteDataSource.getProductList().fold({
             Either.Left(it)

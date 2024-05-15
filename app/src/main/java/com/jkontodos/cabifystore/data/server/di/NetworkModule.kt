@@ -16,9 +16,19 @@ import retrofit2.converter.gson.GsonConverterFactory
 @Module
 @InstallIn(SingletonComponent::class)
 object NetworkModule {
+    /**
+     * Provides Gson for Retrofit to use.
+     *
+     * @return Gson
+     */
     @Provides
     fun provideGson(): Gson = GsonBuilder().create()
 
+    /**
+     * Provides OkHttpClient.Builder for Retrofit to use, adding an interceptor for service calls.
+     *
+     * @return OkHttpClient.Builder
+     */
     @Provides
     fun provideOkHttpClientBuilder(): OkHttpClient.Builder =
         HttpLoggingInterceptor().run {
@@ -27,6 +37,13 @@ object NetworkModule {
                 .addInterceptor(this)
         }
 
+    /**
+     * Provides Retrofit to use in the application.
+     *
+     * @param okHttpClientBuilder Builder for OkHttpClient.
+     * @param gson Gson for GsonConverterFactory.
+     * @return Retrofit
+     */
     @Provides
     fun provideRetrofitClient(
         okHttpClientBuilder: OkHttpClient.Builder,
@@ -37,6 +54,12 @@ object NetworkModule {
             .addConverterFactory(GsonConverterFactory.create(gson))
             .build()
 
+    /**
+     * Provides StoreService to use in the application.
+     *
+     * @param retrofit Retrofit.
+     * @return StoreService
+     */
     @Provides
     fun provideService(retrofit: Retrofit): StoreService =
         retrofit.create(StoreService::class.java)

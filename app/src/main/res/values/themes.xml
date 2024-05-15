@@ -2,7 +2,9 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.CabifyStore" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">@color/M600</item>
+        <item name="android:background">@color/M100</item>
+        <item name="android:textColor">@color/M800</item>
     </style>
 
     <style name="Theme.CabifyStore" parent="Base.Theme.CabifyStore" />
