@@ -62,6 +62,8 @@ dependencies {
     implementation(libs.squareup.retrofit)
     implementation(libs.squareup.gson)
     implementation(libs.squareup.interceptor)
+    implementation(libs.dagger.hilt)
+    implementation(libs.androidx.hilt)
 
     testImplementation(libs.mockito)
     testImplementation(libs.mockito.inline)
