@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Cabify Store</string>
+    <string name="splash.logo">The app logo</string>
+    <string name="splash.bottom">Image that varies depending on the type of splash screen shown</string>
+    <string name="splash.store">Discover the official Cabify store</string>
+    <string name="splash.discounts">Enjoy personalized discounts</string>
+    <string name="splash.shipping">Fast and secure shipping methods</string>
 </resources>

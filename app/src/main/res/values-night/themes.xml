@@ -1,9 +1,18 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.CabifyStore" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your dark theme here. -->
+<resources>
+
+    /** * Base theme that the application will use in dark mode */
+    <style name="Theme.CabifyStore" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="colorPrimary">@color/M800</item>
-        <item name="android:background">@color/M600</item>
+        <item name="colorSecondary">@color/M600</item>
+        <item name="colorAccent">@color/N0</item>
         <item name="android:textColor">@color/N0</item>
+        <item name="fontFamily">@font/font_teachers</item>
+    </style>
+
+    /** *Theme that will be used for the app's launch screen */
+    <style name="SplashTheme" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/M600</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_launcher_foreground</item>
+        <item name="postSplashScreenTheme">@style/Theme.CabifyStore</item>
     </style>
 </resources>

@@ -19,9 +19,9 @@ glide = "4.15.1"
 shimmer = "0.5.0"
 retrofit = "2.9.0"
 interceptor = "4.9.1"
-hilt = "2.31-alpha"
-hilt-plugin = "2.38.1"
+hilt = "2.48.1"
 hilt-lifecycle = "1.0.0-alpha03"
+splashscreen = "1.0.1"
 
 
 [libraries]
@@ -47,8 +47,9 @@ squareup-retrofit = { group = "com.squareup.retrofit2", name = "retrofit", versi
 squareup-gson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofit"}
 squareup-interceptor = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "interceptor"}
 dagger-hilt = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt"}
-dagger-hilt-plugin = { group = "com.google.dagger", name = "hilt-android-gradle-plugin", version.ref = "hilt-plugin"}
+dagger-hilt-plugin = { group = "com.google.dagger", name = "hilt-android-gradle-plugin", version.ref = "hilt"}
 androidx-hilt = { group = "androidx.hilt", name = "hilt-lifecycle-viewmodel", version.ref = "hilt-lifecycle"}
+splashscreen = { group = "androidx.core", name = "core-splashscreen", version.ref = "splashscreen"}
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

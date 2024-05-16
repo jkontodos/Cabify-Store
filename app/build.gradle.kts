@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    kotlin("kapt")
 }
 
 android {
@@ -64,6 +65,7 @@ dependencies {
     implementation(libs.squareup.interceptor)
     implementation(libs.dagger.hilt)
     implementation(libs.androidx.hilt)
+    implementation(libs.splashscreen)
 
     testImplementation(libs.mockito)
     testImplementation(libs.mockito.inline)
