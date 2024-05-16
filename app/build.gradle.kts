@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.android.application)
-    alias(libs.plugins.jetbrains.kotlin.android)
+    alias(libs.plugins.kotlin.android)
+    id("androidx.navigation.safeargs.kotlin")
+    id("dagger.hilt.android.plugin")
     kotlin("kapt")
 }
 
@@ -40,6 +42,9 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    kapt {
+        correctErrorTypes = true
+    }
     buildFeatures {
         buildConfig = true
     }
@@ -63,8 +68,8 @@ dependencies {
     implementation(libs.squareup.retrofit)
     implementation(libs.squareup.gson)
     implementation(libs.squareup.interceptor)
-    implementation(libs.dagger.hilt)
-    implementation(libs.androidx.hilt)
+    implementation(libs.hilt.android)
+    kapt (libs.hilt.android.compiler)
     implementation(libs.splashscreen)
 
     testImplementation(libs.mockito)
