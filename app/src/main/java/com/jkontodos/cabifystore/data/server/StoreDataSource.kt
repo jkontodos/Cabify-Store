@@ -39,6 +39,6 @@ class StoreDataSource @Inject constructor(
             }
         } catch (exception: Exception) {
             Log.e("StoreDataSource", "ApiError: ${exception.localizedMessage}")
-            Either.Left(Failure.ServerErrorWithException(exception))
+            Either.Left(Failure.Exception(exception))
         }
 }
