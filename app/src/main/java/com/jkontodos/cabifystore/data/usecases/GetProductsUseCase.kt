@@ -7,7 +7,6 @@ import com.jkontodos.cabifystore.domain.Product
 import dagger.hilt.android.scopes.ViewModelScoped
 import javax.inject.Inject
 
-@ViewModelScoped
 class GetProductsUseCase @Inject constructor(
     private val storeRepository: StoreRepository
 ) {

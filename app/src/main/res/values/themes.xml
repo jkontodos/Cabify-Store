@@ -3,7 +3,7 @@
     /** * Base theme that the application will use in light mode */
     <style name="Theme.CabifyStore" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="colorPrimary">@color/M600</item>
-        <item name="colorSecondary">@color/M100</item>
+        <item name="colorSecondary">@color/N0</item>
         <item name="colorAccent">@color/M600</item>
         <item name="android:textColor">@color/M800</item>
         <item name="fontFamily">@font/font_teachers</item>

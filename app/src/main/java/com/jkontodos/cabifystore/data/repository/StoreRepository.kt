@@ -27,4 +27,22 @@ class StoreRepository @Inject constructor(
                 it.toDomainProductList()
             )
         }
+
+    /**
+     * Function to save the cart counter.
+     *
+     * @param count the number of products in the cart.
+     */
+    fun saveCartCounter(count: Int) {
+        localDataSource.saveCartCounter(count)
+    }
+
+    /**
+     * Function to retrieve the cart counter.
+     *
+     * @return the number of products in the cart.
+     */
+    fun getCartCounter(): Int {
+        return localDataSource.retrieveCartCounter()
+    }
 }

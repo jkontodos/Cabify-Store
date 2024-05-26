@@ -5,4 +5,7 @@
     <string name="splash.store">Discover the official Cabify store</string>
     <string name="splash.discounts">Enjoy personalized discounts</string>
     <string name="splash.shipping">Fast and secure shipping methods</string>
+    <string name="store.expand">+ Expand</string>
+    <string name="store.taking">Are you taking it?</string>
+    <string name="store.add">Add to Cart</string>
 </resources>

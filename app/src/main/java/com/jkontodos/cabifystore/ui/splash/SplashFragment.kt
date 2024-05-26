@@ -9,12 +9,16 @@ import android.view.animation.AnimationUtils
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.NavOptions
+import androidx.navigation.fragment.findNavController
 import com.jkontodos.cabifystore.R
 import com.jkontodos.cabifystore.databinding.FragmentSplashBinding
 import com.jkontodos.cabifystore.ui.commons.visibleOrNot
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
+@AndroidEntryPoint
 class SplashFragment : Fragment() {
     private lateinit var binding: FragmentSplashBinding
 
@@ -77,7 +81,7 @@ class SplashFragment : Fragment() {
 
             override fun onAnimationEnd(p0: Animation?) {
                 lifecycleScope.launch {
-                    delay(250)
+                    delay(800)
                     navigateToStoreFragment()
                 }
             }
@@ -90,6 +94,15 @@ class SplashFragment : Fragment() {
     }
 
     private fun navigateToStoreFragment() {
-        //TODO("Not yet implemented")
+        val action = SplashFragmentDirections.actionSplashFragmentToStoreFragment()
+        val navOptions = NavOptions.Builder()
+            .setPopUpTo(R.id.splashFragment, true)
+            .setEnterAnim(R.anim.slide_in)
+            .setExitAnim(R.anim.slide_out)
+            .build()
+        findNavController().navigate(
+            action,
+            navOptions
+        )
     }
 }
