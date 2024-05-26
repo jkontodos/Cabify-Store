@@ -6,6 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.jkontodos.cabifystore.data.exception.Failure
+import com.jkontodos.cabifystore.data.usecases.AddProductToCartUseCase
 import com.jkontodos.cabifystore.data.usecases.GetCartCounterUseCase
 import com.jkontodos.cabifystore.data.usecases.GetProductsUseCase
 import com.jkontodos.cabifystore.data.usecases.SaveCartCounterUseCase
@@ -19,7 +20,8 @@ import javax.inject.Inject
 class StoreViewModel @Inject constructor(
     private val getProductsUseCase: GetProductsUseCase,
     private val saveCartCounterUseCase: SaveCartCounterUseCase,
-    private val getCartCounterUseCase: GetCartCounterUseCase
+    private val getCartCounterUseCase: GetCartCounterUseCase,
+    private val addProductToCartUseCase: AddProductToCartUseCase
 ) : ViewModel() {
     private var _model = MutableLiveData<UiModel>()
     val model: LiveData<UiModel> = _model
@@ -54,7 +56,7 @@ class StoreViewModel @Inject constructor(
      */
     fun addProductToCart(product: Product) {
         viewModelScope.launch {
-            // TODO: Implement saving the product to the customer's cart.
+            addProductToCartUseCase.invoke(product)
             saveCartCount()
         }
     }
