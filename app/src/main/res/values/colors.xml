@@ -5,6 +5,11 @@
     <color name="M200">#E8DEFF</color>
     <color name="M600">#7145D6</color>
     <color name="M800">#2C2643</color>
-    <color name="Y400">#FFD36B</color>
+    <color name="P500">#F55DAE</color>
+    <color name="R500">#FD665B</color>
+    <color name="O400">#FFBE9E</color>
+    <color name="O500">#FC8549</color>
+    <color name="Y500">#F3AF13</color>
+    <color name="B500">#4694FA</color>
     <color name="Black">#000</color>
 </resources>

@@ -46,7 +46,7 @@ class ProductsAdapter(
      *
      * @param productList The updated product list.
      */
-    fun updateOnlineOrderList(productList: List<Product>) {
+    fun updateProductList(productList: List<Product>) {
         this.productList = productList
         notifyDataSetChanged()
     }

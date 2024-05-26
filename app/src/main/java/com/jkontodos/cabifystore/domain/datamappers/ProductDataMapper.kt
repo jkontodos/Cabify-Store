@@ -23,6 +23,7 @@ fun ProductResponse.toDomainProduct(): Product = Product(code, name, price)
 /**
  * Converts a [Product] to a [CartProduct]
  *
+ * @param quantity the quantity of the product
  * @return the converted [CartProduct]
  */
-fun Product.toDomainCartProduct(): CartProduct = CartProduct(code, name, price, 1)
+fun Product.toDomainCartProduct(quantity: Int): CartProduct = CartProduct(code, name, price, 0.0, quantity)

@@ -63,7 +63,7 @@ dependencies {
     implementation(libs.androidx.lifecycle.extensions)
     implementation(libs.androidx.navigation.fragment)
     implementation(libs.androidx.navigation.ui)
-    implementation(libs.glide)
+    implementation(libs.lottie)
     implementation(libs.shimmer)
     implementation(libs.squareup.retrofit)
     implementation(libs.squareup.gson)

@@ -64,7 +64,7 @@ class StoreFragment : Fragment() {
     }
 
     private fun setProducts(productList: List<Product>) {
-        productsAdapter.updateOnlineOrderList(productList)
+        productsAdapter.updateProductList(productList)
     }
 
     /** * Initializes the adapter configuration for the product list and sets it for the RecyclerView. */
