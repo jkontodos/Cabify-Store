@@ -66,3 +66,17 @@ fun ImageView.loadImageResource(imgResource: Int) {
 fun TextView.setBagCounterText(counter: Int) {
     this.text = if (counter <= 9) counter.toString() else "+9"
 }
+
+/**
+ * With this extension function, we set the title of the shopping cart using the cart counter.
+ *
+ * @param counter The number of products in the shopping cart.
+ */
+@BindingAdapter("setCartTitleText")
+fun TextView.setCartTitleText(counter: Int) {
+    val title =
+        if (counter > 0) "${context.getString(R.string.cart_title)} ($counter)" else context.getString(
+            R.string.cart_title
+        )
+    this.text = title
+}

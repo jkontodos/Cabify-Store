@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.jkontodos.cabifystore.R
 import com.jkontodos.cabifystore.databinding.FragmentStoreBinding
@@ -43,6 +44,10 @@ class StoreFragment : Fragment() {
 
         binding.viewModel = viewModel
         viewModel.getCartCount()
+
+        binding.ivBag.setOnClickListener {
+            navigateToCart()
+        }
 
         configAdapter()
         viewModel.getProducts()
@@ -82,4 +87,8 @@ class StoreFragment : Fragment() {
         binding.rvProducts.adapter = productsAdapter
     }
 
+    /** * Navigates to the cart fragment. */
+    private fun navigateToCart() {
+        findNavController().navigate(R.id.action_storeFragment_to_cartFragment)
+    }
 }

@@ -8,4 +8,7 @@
     <string name="store.expand">+ Expand</string>
     <string name="store.taking">Are you taking it?</string>
     <string name="store.add">Add to Cart</string>
+    <string name="cart.title">Shopping Cart</string>
+    <string name="cart.empty">Your cart is empty</string>
+    <string name="cart.process">Process the order</string>
 </resources>

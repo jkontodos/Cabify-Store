@@ -93,12 +93,15 @@ class SplashFragment : Fragment() {
         binding.lyBottom.startAnimation(anim)
     }
 
+    /** * Navigates to the store fragment */
     private fun navigateToStoreFragment() {
         val action = SplashFragmentDirections.actionSplashFragmentToStoreFragment()
         val navOptions = NavOptions.Builder()
             .setPopUpTo(R.id.splashFragment, true)
             .setEnterAnim(R.anim.slide_in)
             .setExitAnim(R.anim.slide_out)
+            .setPopEnterAnim(R.anim.slide_in)
+            .setPopExitAnim(R.anim.slide_out)
             .build()
         findNavController().navigate(
             action,
