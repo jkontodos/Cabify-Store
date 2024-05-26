@@ -1,5 +1,7 @@
 package com.jkontodos.cabifystore.ui.store
 
+import com.jkontodos.cabifystore.domain.Product
+
 interface ProductOnClickListener {
-    fun onClickProduct(productCode: String)
+    fun onAddToCartProduct(product: Product)
 }

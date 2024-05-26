@@ -42,27 +42,99 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="16dp"
+                android:paddingTop="16dp"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
                 android:visibility="invisible"
                 tools:visibility="visible">
 
-                <TextView
-                    android:id="@+id/tv_name"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/font_teachers"
-                    android:text="@{name}"
-                    android:textColor="@color/Black"
-                    android:textStyle="bold"
-                    tools:text="Cabify Voucher" />
+                    android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/tv_price"
+                    <TextView
+                        android:id="@+id/tv_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/font_teachers"
+                        android:text="@{name}"
+                        android:textColor="@color/Black"
+                        android:textStyle="bold"
+                        tools:text="Cabify Voucher" />
+
+                    <ImageView
+                        android:id="@+id/iv_product_type"
+                        android:layout_width="match_parent"
+                        android:layout_height="18dp"
+                        android:layout_weight="8"
+                        app:srcCompat="@drawable/ic_voucher" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginBottom="16dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_price"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@{price}"
+                        tools:text="5,00€" />
+
+                    <TextView
+                        android:id="@+id/tv_expand"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/font_teachers"
+                        android:gravity="end"
+                        android:text="@string/store.expand"
+                        android:textColor="@color/M600" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ly_add_to_cart"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="@{price}"
-                    tools:text="5,00€" />
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    tools:visibility="visible">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/M200" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingTop="16dp"
+                        android:paddingBottom="16dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:text="@string/store.taking" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btn_add_to_card"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/store.add"
+                            app:cornerRadius="10dp" />
+                    </LinearLayout>
+                </LinearLayout>
+
             </LinearLayout>
 
             <com.facebook.shimmer.ShimmerFrameLayout
@@ -77,13 +149,13 @@
 
                     <FrameLayout
                         android:layout_width="150dp"
-                        android:layout_height="16dp"
+                        android:layout_height="18dp"
                         android:background="@drawable/mockup_placeholder" />
 
                     <FrameLayout
                         android:layout_width="75dp"
-                        android:layout_height="16dp"
-                        android:layout_marginTop="8dp"
+                        android:layout_height="18dp"
+                        android:layout_marginTop="24dp"
                         android:background="@drawable/mockup_placeholder" />
                 </LinearLayout>
             </com.facebook.shimmer.ShimmerFrameLayout>

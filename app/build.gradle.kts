@@ -75,6 +75,7 @@ dependencies {
     testImplementation(libs.mockito)
     testImplementation(libs.mockito.inline)
     testImplementation(libs.junit)
+    testImplementation(libs.amshove.kluent)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 }

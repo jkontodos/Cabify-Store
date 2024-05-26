@@ -41,14 +41,19 @@ class StoreFragment : Fragment() {
             }
         }
 
+        binding.viewModel = viewModel
+        viewModel.getCartCount()
+
         configAdapter()
         viewModel.getProducts()
     }
 
+    /** * Shows the loading indicator. */
     private fun showLoading() {
-        //TODO("Not yet implemented")
+        Log.d("Store Fragment - ", "Loading")
     }
 
+    /** * Shows the error message. */
     private fun showError(message: String?) {
         Log.e("Store Fragment - ", message?:"error")
     }
@@ -57,6 +62,7 @@ class StoreFragment : Fragment() {
         productsAdapter.updateOnlineOrderList(productList)
     }
 
+    /** * Initializes the adapter configuration for the product list and sets it for the RecyclerView. */
     private fun configAdapter(){
         val mockupProduct = Product(
             code = "",
@@ -69,8 +75,8 @@ class StoreFragment : Fragment() {
         binding.rvProducts.layoutManager = layoutManager
         productsAdapter =
             ProductsAdapter(mockupProductList, object : ProductOnClickListener {
-                override fun onClickProduct(productCode: String) {
-                    //TODO("Not yet implemented")
+                override fun onAddToCartProduct(product: Product) {
+                    viewModel.addProductToCart(product)
                 }
             })
         binding.rvProducts.adapter = productsAdapter
