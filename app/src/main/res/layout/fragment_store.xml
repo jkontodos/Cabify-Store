@@ -97,7 +97,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/toolbar"
-            tools:listitem="@layout/item_product" />
+            tools:listitem="@layout/item_product"
+            tools:itemCount="3" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
